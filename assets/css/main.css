@@ -3903,3 +3903,35 @@ input, select, textarea {
 			}
 
 		}
+/* Macari academic portfolio colour theme */
+body {
+  background: #071a2b;
+}
+
+#sidebar {
+  background: #061826;
+}
+
+.wrapper.style1 {
+  background-color: #0b2d45;
+}
+
+.wrapper.style1-alt {
+  background-color: #0e4d64;
+}
+
+.wrapper.style2 {
+  background-color: #0f766e;
+}
+
+.wrapper.style3 {
+  background-color: #123e56;
+}
+
+.wrapper.style4 {
+  background-color: #0c2434;
+}
+
+#footer {
+  background: #061826;
+}
