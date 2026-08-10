@@ -385,3 +385,291 @@ a:hover {
     padding-top: 0;
   }
 }
+/* Macari final space theme — paste at the END of assets/css/main.css */
+
+:root {
+  --space-deep: #03050d;
+  --panel: #10182d;
+  --panel-alt: #111c35;
+  --accent: #41d8ff;
+  --accent-soft: #8b5cf6;
+  --text: #eef4ff;
+  --muted: rgba(226, 232, 240, 0.78);
+}
+
+body {
+  background: var(--space-deep);
+}
+
+body,
+input,
+select,
+textarea {
+  color: var(--muted);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6,
+strong, b {
+  color: var(--text);
+}
+
+#sidebar,
+#footer {
+  background: linear-gradient(180deg, #0a1024 0%, #050712 100%);
+}
+
+.wrapper.style1 {
+  background: linear-gradient(135deg, #101b40 0%, #111c35 55%, #24144a 100%);
+}
+
+.wrapper.style1-alt {
+  background: var(--panel-alt);
+}
+
+.wrapper.style3 {
+  background: #0d1429;
+}
+
+.wrapper.style4 {
+  background: var(--panel);
+}
+
+#sidebar nav a:before {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#sidebar nav a:after,
+h1.major:after {
+  background-image: linear-gradient(to right, var(--accent), var(--accent-soft));
+}
+
+#sidebar nav a:hover,
+a:hover {
+  color: var(--accent);
+}
+
+.wrapper.style1 .icon.major:before,
+.wrapper.style1-alt .icon.major:before,
+.wrapper.style2 .icon.major:before,
+.wrapper.style2-alt .icon.major:before,
+.wrapper.style3 .icon.major:before,
+.wrapper.style3-alt .icon.major:before {
+  color: #1f2a4d;
+}
+
+/* Clean intro layout */
+#intro > .inner {
+  display: block;
+  position: relative;
+  z-index: 1;
+  max-width: 58rem;
+}
+
+#intro .image.profile {
+  display: block;
+  width: 12.5rem;
+  height: 12.5rem;
+  margin: 0 0 1.75rem 0;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(65, 216, 255, 0.08), 0 0 3rem rgba(65, 216, 255, 0.25);
+}
+
+#intro .image.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+#intro h1 {
+  margin-bottom: 0.15em;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  letter-spacing: -0.035em;
+}
+
+#intro h3 {
+  color: #9eeeff;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#intro p {
+  max-width: 50rem;
+}
+
+/* Animated star field, visible only behind the introduction */
+#intro {
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#intro:before,
+#intro:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -60%;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.92) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(115,220,255,.8) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(188,147,255,.75) 0 1px, transparent 1.7px);
+  background-size: 125px 125px, 185px 185px, 245px 245px;
+  background-position: 0 0, 60px 95px, 140px 35px;
+  opacity: .62;
+  animation: drift-stars 48s linear infinite;
+}
+
+#intro:after {
+  opacity: .35;
+  filter: blur(.35px);
+  animation-duration: 80s;
+  animation-direction: reverse;
+}
+
+@keyframes drift-stars {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(9%, 14%, 0); }
+}
+
+.spotlights > section > .image:before {
+  background: rgba(8, 12, 30, 0.76);
+}
+
+/* Desktop sidebar like the reference site */
+@media screen and (min-width: 981px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18em;
+    height: 100vh;
+    padding: 2.5em 2.5em 0.5em;
+    text-align: right;
+  }
+
+  #sidebar + #wrapper,
+  #sidebar + #wrapper + #footer {
+    margin-left: 18em;
+  }
+}
+
+/* Never show browser navigation bullets */
+#sidebar nav > ul {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar nav > ul > li {
+  list-style: none;
+  margin: 1.25em 0 0;
+  padding: 0;
+}
+
+#sidebar nav > ul > li:first-child {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 980px) {
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 1rem 1.25rem;
+    text-align: left;
+  }
+
+  #sidebar > .inner {
+    min-height: auto;
+  }
+
+  #sidebar nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+  }
+
+  #sidebar nav > ul > li {
+    margin: 0;
+  }
+
+  #sidebar nav a {
+    padding: 0.55rem 0;
+  }
+
+  #sidebar + #wrapper,
+  #sidebar + #wrapper + #footer {
+    margin-left: 0;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  body,
+  input,
+  select,
+  textarea {
+    font-size: 12pt;
+  }
+
+  #intro .image.profile {
+    width: 9.5rem;
+    height: 9.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #intro:before,
+  #intro:after {
+    animation: none;
+  }
+}
+/* Paste at the VERY END of assets/css/main.css */
+
+/* Dark-blue to reddish-blue hero gradient */
+.wrapper.style1 {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(110, 40, 105, 0.45), transparent 34%),
+    radial-gradient(circle at 18% 82%, rgba(22, 88, 170, 0.35), transparent 40%),
+    linear-gradient(125deg, #06122c 0%, #102c63 52%, #4a1b4d 100%);
+}
+
+/* Smooth, one-direction star motion.
+   The repeating background pattern makes the restart visually seamless. */
+#intro:before,
+#intro:after {
+  inset: 0;
+  background-size: 125px 125px, 185px 185px, 245px 245px;
+  animation: star-stream 36s linear infinite;
+}
+
+#intro:after {
+  animation-duration: 62s;
+  animation-direction: normal;
+}
+
+@keyframes star-stream {
+  from {
+    background-position: 0 0, 60px 95px, 140px 35px;
+  }
+  to {
+    background-position: 125px 250px, 245px 280px, 385px 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #intro:before,
+  #intro:after {
+    animation: none;
+  }
+}
