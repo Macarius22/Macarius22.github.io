@@ -1,201 +1,234 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Macari Hanna</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Macari Hanna</title>
   <meta name="description" content="Macari Magdy Fayez Abdelmalak — MSc student in Physics at the University of Bologna." />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <meta name="theme-color" content="#050816" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
-<body class="is-preload">
+<body>
 
-  <section id="sidebar">
-    <div class="inner">
-      <nav>
-        <ul>
-          <li><a href="#intro">Introduction</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <div class="sky" aria-hidden="true"><div class="stars s1"></div><div class="stars s2"></div><div class="nebula"></div></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- Sidebar (desktop) / top bar (mobile) -->
+  <header id="sidebar">
+    <a class="brand" href="#intro" aria-label="Back to top">M<span>H</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="side-links">
+      <a href="https://github.com/Macarius22" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:macari.hanna@studio.unibo.it" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="cv/Macari_CV.pdf" aria-label="CV"><i class="fas fa-file-alt"></i></a>
     </div>
-  </section>
+  </header>
 
-  <div id="wrapper">
+  <main id="wrapper">
 
-    <section id="intro" class="wrapper style1 fullscreen fade-up">
-      <div class="inner">
-        <span class="image profile"><img src="images/profile.jpg" alt="Portrait of Macari Magdy Fayez Abdelmalak" /></span>
-        <h1>Macari Magdy Fayez Abdelmalak</h1>
-        <h3>MSc Student in Material Physics</h3>
-        <p>
-          University of Bologna 
+    <!-- Intro -->
+    <section id="intro" class="hero">
+      <canvas id="lattice" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <div class="portrait reveal">
+          <img src="images/profile.jpg" alt="Portrait of Macari Magdy Fayez Abdelmalak" />
+          <span class="orbit o1"></span><span class="orbit o2"></span>
+        </div>
+        <h1 class="reveal">Macari Magdy Fayez Abdelmalak</h1>
+        <h3 class="eyebrow reveal">MSc Student in Material Physics</h3>
+        <p class="where reveal"><i class="fas fa-map-marker-alt"></i> University of Bologna</p>
+        <p class="lead reveal">
+          I am interested in <span class="hl">topological materials</span>, <span class="hl">electronic-structure theory</span>,
+          <span class="hl">density-functional theory</span>, <span class="hl">Quantum Information and Computation</span>.
         </p>
-        <p>
-          I am interested in topological materials, electronic-structure theory,
-          density-functional theory, Quantum Information and Computation.
-        </p>
-        <ul class="actions">
-          <li><a href="cv/Macari_CV.pdf" class="button">Download CV</a></li>
-          <li><a href="#projects" class="button">Selected Projects</a></li>
+        <ul class="actions reveal">
+          <li><a href="cv/Macari_CV.pdf" class="button primary"><i class="fas fa-download"></i> Download CV</a></li>
+          <li><a href="#projects" class="button"><i class="fas fa-flask"></i> Selected Projects</a></li>
         </ul>
       </div>
+      <p class="hint" id="hint"><span class="dot"></span> Move your cursor over the crystal: you are an excess electron in rutile TiO<sub>2</sub>, and the lattice distorts around you (a small polaron).</p>
+      <a href="#research" class="scroll-cue" aria-label="Scroll down"><span></span></a>
     </section>
 
-    <section id="research" class="wrapper style1-alt fade-up">
+    <!-- Research -->
+    <section id="research" class="block">
       <div class="inner">
-        <h2>Research interests and tools</h2>
-        <p>
+        <p class="kicker reveal">01 · Research</p>
+        <h2 class="reveal">Research interests and tools</h2>
+        <p class="reveal intro-text">
           My work combines theoretical condensed matter physics with computational simulation,
           data analysis, and reproducible Linux/HPC workflows.
         </p>
-        <div class="features">
-          <section>
-            <span class="icon solid major fa-atom"></span>
+        <div class="cards">
+          <article class="card tilt reveal">
+            <span class="icon"><i class="fas fa-atom"></i></span>
             <h3>Topological Materials</h3>
             <p>Topological insulators, spin-orbit coupling, electronic bands, and topological invariants.</p>
-          </section>
-          <section>
-            <span class="icon solid major fa-calculator"></span>
+          </article>
+          <article class="card tilt reveal">
+            <span class="icon"><i class="fas fa-calculator"></i></span>
             <h3>Electronic-Structure Methods</h3>
             <p>Density-functional theory, VASP, Quantum ESPRESSO, Wannier90, band structures, and tight-binding models.</p>
-          </section>
-          <section>
-            <span class="icon solid major fa-flask"></span>
+          </article>
+          <article class="card tilt reveal">
+            <span class="icon"><i class="fas fa-flask"></i></span>
             <h3>Surface and Materials Science</h3>
             <p>Adsorption phenomena, surface chemistry, molecular dynamics, and materials characterisation.</p>
-          </section>
-          <section>
-            <span class="icon solid major fa-code"></span>
+          </article>
+          <article class="card tilt reveal">
+            <span class="icon"><i class="fas fa-code"></i></span>
             <h3>Scientific Computing</h3>
             <p>Python, C/C++, LaTeX, data visualisation, Linux, SLURM, and high-performance computing workflows.</p>
-          </section>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="wrapper style3 spotlights">
-      <section>
-        <span class="image"><img src="images/tio2_polaron_fatbands.jpg" alt="Fat bands of rutile TiO2 with an excess electron: the polaron band in the gap" data-position="center center" /></span>
-        <div class="content">
-          <div class="inner">
-            <h2>Small electron polaron in rutile TiO<sub>2</sub></h2>
+    <!-- Projects -->
+    <section id="projects" class="block alt">
+      <div class="inner">
+        <p class="kicker reveal">02 · Projects</p>
+        <h2 class="reveal">Selected projects</h2>
+
+        <article class="feature reveal">
+          <div class="feature-media">
+            <span class="badge"><i class="fas fa-star"></i> Featured</span>
+            <a href="images/tio2_polaron_fatbands.jpg" class="zoom" aria-label="Open the figure full size">
+              <img src="images/tio2_polaron_fatbands.jpg" alt="Fat bands of rutile TiO2 with an excess electron: the polaron band in the gap" loading="lazy" />
+            </a>
+            <p class="caption">Fat bands of a 162-atom supercell with one excess electron: the orange band in the gap is the polaron.</p>
+          </div>
+          <div class="feature-body">
+            <h3>Small electron polaron in rutile TiO<sub>2</sub></h3>
             <p>
               DFT+U (VASP) study of an excess electron trapped on a single Ti site of rutile TiO<sub>2</sub>:
               site-controlled trapping, the polaron formation energy (E<sub>POL</sub> = &minus;0.163 eV, stable),
               and the in-gap polaron level 0.92 eV below the conduction band.
             </p>
+            <div class="stats">
+              <div><strong class="count" data-to="-0.163" data-dec="3">−0.163</strong><span>eV · E<sub>POL</sub></span></div>
+              <div><strong class="count" data-to="0.92" data-dec="2">0.92</strong><span>eV below CBM</span></div>
+              <div><strong class="count" data-to="0.91" data-dec="2">0.91</strong><span>μ<sub>B</sub> on Ti</span></div>
+              <div><strong class="count" data-to="162" data-dec="0">162</strong><span>atoms</span></div>
+            </div>
+            <ul class="tags">
+              <li>VASP</li><li>DFT+U</li><li>Polarons</li><li>Python</li><li>gnuplot</li><li>SLURM / HPC</li>
+            </ul>
             <ul class="actions">
-              <li><a href="https://github.com/Macarius22/TiO2-small-polaron-DFTU" class="button">GitHub repository</a></li>
-              <li><a href="https://github.com/Macarius22/TiO2-small-polaron-DFTU/blob/main/report/TiO2_small_polaron_report.pdf" class="button">Report (PDF)</a></li>
+              <li><a href="https://github.com/Macarius22/TiO2-small-polaron-DFTU" class="button primary"><i class="fab fa-github"></i> GitHub repository</a></li>
+              <li><a href="https://github.com/Macarius22/TiO2-small-polaron-DFTU/blob/main/report/TiO2_small_polaron_report.pdf" class="button"><i class="fas fa-file-pdf"></i> Report (PDF)</a></li>
             </ul>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <section>
-        <span class="image"><img src="images/surfdos_l.png" alt="Density of States on surface" data-position="center center" /></span>
-        <div class="content">
-          <div class="inner">
-            <h2>Topological properties of Bi<sub>2</sub>Se<sub>3</sub></h2>
-            <p>
-              First-principles and Wannier-based study of a topological-insulator system.
-              The project focuses on electronic bands, spin-orbit coupling, Wannier functions,
-              and topological features of the material.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <span class="image"><img src="images/W_OT_TOpView.png" alt="Surface science and adsorption simulation visualisation" data-position="center center" /></span>
-        <div class="content">
-          <div class="inner">
-            <h2> Adsorption and surface chemistry</h2>
-            <p>
-              Density-functional-theory calculations on adsorption phenomena at the surface,
-              with emphasis on surface structure, electronic properties, and chemical interactions.
-            </p>
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <section id="experience" class="wrapper style4 fade-up">
-      <div class="inner">
-        <h2>Education and experience</h2>
-        <div class="features">
-          <section>
-            <span class="icon solid major fa-university"></span>
-            <h3>MSc in Physics · 2025–present</h3>
-            <p>Alma Mater Studiorum – University of Bologna.</p>
-          </section>
-          <section>
-            <span class="icon solid major fa-laptop-code"></span>
-            <h3>Quantum Computing Studies · 2025–present</h3>
-            <p>Professional Master in Computer Science (Quantum Computing), Alexandria University.</p>
-          </section>
-          <section>
-            <span class="icon solid major fa-chalkboard-teacher"></span>
-            <h3>Physics Teaching Assistant · 2024–2025</h3>
-            <p>Teaching support, problem-solving sessions, and laboratory work at UST-ZC and MUST.</p>
-          </section>
-          <section>
-            <span class="icon solid major fa-university"></span>
-            <h3>BSc in Physics · 2020–2024</h3>
-            <p>University for Science and Technology at Zewail City</p>
-          </section>
+        <div class="projects-grid">
+          <article class="project tilt reveal">
+            <div class="project-media"><img src="images/surfdos_l.png" alt="Density of States on surface" loading="lazy" /></div>
+            <div class="project-body">
+              <h3>Topological properties of Bi<sub>2</sub>Se<sub>3</sub></h3>
+              <p>
+                First-principles and Wannier-based study of a topological-insulator system.
+                The project focuses on electronic bands, spin-orbit coupling, Wannier functions,
+                and topological features of the material.
+              </p>
+            </div>
+          </article>
+          <article class="project tilt reveal">
+            <div class="project-media light"><img src="images/W_OT_TOpView.png" alt="Surface science and adsorption simulation visualisation" loading="lazy" /></div>
+            <div class="project-body">
+              <h3>Adsorption and surface chemistry</h3>
+              <p>
+                Density-functional-theory calculations on adsorption phenomena at the surface,
+                with emphasis on surface structure, electronic properties, and chemical interactions.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="wrapper style1 fade-up">
+    <!-- Experience -->
+    <section id="experience" class="block">
       <div class="inner">
-        <h2>Get in touch</h2>
-        <p>I welcome research discussions, collaboration opportunities, and professional inquiries.</p>
-        <div class="split style1">
-          <section>
-            <h3>Email</h3>
-            <p><a href="mailto:macari.hanna@studio.unibo.it">macari.hanna@studio.unibo.it</a></p>
-            <h3>Curriculum vitae</h3>
-            <p><a href="cv/Macari_CV.pdf">Download my CV (PDF)</a></p>
-          </section>
-          <section>
-            <ul class="contact">
-              <li>
-                <h3>GitHub</h3>
-                <a href="https://github.com/Macarius22">github.com/Macarius22</a>
-              </li>
-              <li>
-                <h3>Languages</h3>
-                <span>Arabic (native) · English (professional working proficiency)</span>
-              </li>
-            </ul>
-          </section>
+        <p class="kicker reveal">03 · Experience</p>
+        <h2 class="reveal">Education and experience</h2>
+        <ol class="timeline">
+          <li class="reveal">
+            <span class="node"><i class="fas fa-university"></i></span>
+            <div class="t-card">
+              <h3>MSc in Physics <span class="when">2025–present</span></h3>
+              <p>Alma Mater Studiorum – University of Bologna.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="node"><i class="fas fa-laptop-code"></i></span>
+            <div class="t-card">
+              <h3>Quantum Computing Studies <span class="when">2025–present</span></h3>
+              <p>Professional Master in Computer Science (Quantum Computing), Alexandria University.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="node"><i class="fas fa-chalkboard-teacher"></i></span>
+            <div class="t-card">
+              <h3>Physics Teaching Assistant <span class="when">2024–2025</span></h3>
+              <p>Teaching support, problem-solving sessions, and laboratory work at UST-ZC and MUST.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="node"><i class="fas fa-university"></i></span>
+            <div class="t-card">
+              <h3>BSc in Physics <span class="when">2020–2024</span></h3>
+              <p>University for Science and Technology at Zewail City</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="block alt">
+      <div class="inner">
+        <p class="kicker reveal">04 · Contact</p>
+        <h2 class="reveal">Get in touch</h2>
+        <p class="reveal intro-text">I welcome research discussions, collaboration opportunities, and professional inquiries.</p>
+        <div class="contact-grid">
+          <a class="contact-card tilt reveal" href="mailto:macari.hanna@studio.unibo.it">
+            <i class="fas fa-envelope"></i><h3>Email</h3><span class="nowrap-sm">macari.hanna@studio.unibo.it</span>
+          </a>
+          <a class="contact-card tilt reveal" href="https://github.com/Macarius22">
+            <i class="fab fa-github"></i><h3>GitHub</h3><span>github.com/Macarius22</span>
+          </a>
+          <a class="contact-card tilt reveal" href="cv/Macari_CV.pdf">
+            <i class="fas fa-file-alt"></i><h3>Curriculum vitae</h3><span>Download my CV (PDF)</span>
+          </a>
+          <div class="contact-card tilt reveal">
+            <i class="fas fa-language"></i><h3>Languages</h3><span>Arabic (native) · English (professional working proficiency)</span>
+          </div>
         </div>
       </div>
     </section>
 
-  </div>
-
-  <footer id="footer" class="wrapper style-footer">
-    <div class="inner">
+    <footer id="footer">
       <ul class="menu">
         <li>&copy; Macari Magdy Fayez Abdelmalak.</li>
         <li>Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</li>
       </ul>
-    </div>
-  </footer>
+    </footer>
+  </main>
 
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>
